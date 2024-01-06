@@ -502,5 +502,6 @@ FodyWeavers.xsd
 # Additional files built by Visual Studio
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,macos,visualstudio,visualstudiocode,c++
-#.dSYM ¹«½Ã
+#.dSYM ï¿½ï¿½ï¿½ï¿½
 *.dSYM
+tasks.json
