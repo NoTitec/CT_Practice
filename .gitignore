@@ -502,3 +502,6 @@ FodyWeavers.xsd
 # Additional files built by Visual Studio
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,macos,visualstudio,visualstudiocode,c++
+C++_CT_12_7/C++_CT_12_7
+C++_CT_12_7/C++_CT_12_7.dSYM/Contents/Info.plist
+C++_CT_12_7/C++_CT_12_7.dSYM/Contents/Resources/DWARF/C++_CT_12_7
