@@ -11,18 +11,21 @@ vector<int> arr;
 int main(void) {
     cin >> n;
 
+    //동전 액면가 입력
     for (int i = 0; i < n; i++) {
         int x;
         cin >> x;
         arr.push_back(x);
     }
-
+    //오름차순 정렬
     sort(arr.begin(), arr.end());
 
+    //만들려는 금액
     int target = 1;
     for (int i = 0; i < n; i++) {
         // 만들 수 없는 금액을 찾았을 때 반복 종료
         if (target < arr[i]) break;
+        //해당 금액 만들기 가능하면 가진 동전들로 target+arr[i] -1 까지 금액 만들기가 가능하다
         target += arr[i];
     }
 

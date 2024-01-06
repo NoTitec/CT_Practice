@@ -1,46 +1,40 @@
-﻿// C++_CT_11_3.cpp : 이 파일에는 'main' 함수가 포함됩니다. 거기서 프로그램 실행이 시작되고 종료됩니다.
+﻿// C++_CT_12_2.cpp : 이 파일에는 'main' 함수가 포함됩니다. 거기서 프로그램 실행이 시작되고 종료됩니다.
 //
 
 #include <bits/stdc++.h>
+
 using namespace std;
 
-string s;
-//모두 0만드는데 뒤집는 수
-int count0;
-//모두 1만드는데 뒤집는 수
-int count1;
+//입력문자열변수
+string input;
+//각 알파벳 담을 vector
+vector<char> alphas;
+//숫자 담을 변수
+int number=0;
 
 int main()
 {
-    cin >> s;
-    //첫번째 원소 1이면
-    if(s[0] == '1')
-    {
-        count0 += 1;
-    }
-    else
-    {
-        count1 += 1;
-    }
+    cin >> input;
 
-    for (int i = 1; i < s.size() - 1; i++)
+    for (int i = 0; i < input.size(); i++)
     {
-        //i 번째 수와 i+1 수가 다르면
-        if (s[i] != s[i + 1])
+        if (isalpha(input[i]))
         {
-            //i+1번째수가 1이면
-            if (s[i + 1] == '1')
-            {
-                count0 += 1;
-            }
-            //0이면
-            else
-            {
-                count1 += 1;
-            }
+            alphas.push_back(input[i]);
+        }
+        else
+        {
+            number += input[i] - '0';
         }
     }
-    cout << min(count0, count1);
+
+    sort(alphas.begin(), alphas.end());
+
+    for (int i = 0; i < alphas.size(); i++)
+    {
+        cout << alphas[i];
+    }
+    if(number!=0) cout << number;
 }
 
 // 프로그램 실행: <Ctrl+F5> 또는 [디버그] > [디버깅하지 않고 시작] 메뉴

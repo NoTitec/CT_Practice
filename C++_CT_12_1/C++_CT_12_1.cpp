@@ -1,46 +1,39 @@
-﻿// C++_CT_11_3.cpp : 이 파일에는 'main' 함수가 포함됩니다. 거기서 프로그램 실행이 시작되고 종료됩니다.
+﻿// C++_CT_12_1.cpp : 이 파일에는 'main' 함수가 포함됩니다. 거기서 프로그램 실행이 시작되고 종료됩니다.
 //
 
 #include <bits/stdc++.h>
+
 using namespace std;
 
-string s;
-//모두 0만드는데 뒤집는 수
-int count0;
-//모두 1만드는데 뒤집는 수
-int count1;
+//입력 점수 문자열 담을 변수
+
+string score;
+
+//자리수 합 담을 변수
+int sum;
 
 int main()
 {
-    cin >> s;
-    //첫번째 원소 1이면
-    if(s[0] == '1')
+    cin >> score;
+
+    //왼쪽 절반 자리수 합 구하기
+    for (int i = 0; i < score.size() / 2; i++)
     {
-        count0 += 1;
+        sum += score[i] - '0';
+    }
+    //오른족 절반 자리수 합 만큼 빼기
+    for (int i = score.size() / 2; i < score.size(); i++)
+    {
+        sum -= score[i] - '0';
+    }
+    if (sum == 0)
+    {
+        cout << "LUCKY";
     }
     else
     {
-        count1 += 1;
+        cout << "READY";
     }
-
-    for (int i = 1; i < s.size() - 1; i++)
-    {
-        //i 번째 수와 i+1 수가 다르면
-        if (s[i] != s[i + 1])
-        {
-            //i+1번째수가 1이면
-            if (s[i + 1] == '1')
-            {
-                count0 += 1;
-            }
-            //0이면
-            else
-            {
-                count1 += 1;
-            }
-        }
-    }
-    cout << min(count0, count1);
 }
 
 // 프로그램 실행: <Ctrl+F5> 또는 [디버그] > [디버깅하지 않고 시작] 메뉴
