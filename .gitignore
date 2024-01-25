@@ -505,3 +505,4 @@ FodyWeavers.xsd
 #.dSYM ����
 *.dSYM
 tasks.json
+#macvscodegitpushtest
